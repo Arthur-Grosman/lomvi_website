@@ -147,6 +147,7 @@ header {
 .hero {
   position: relative;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -154,40 +155,43 @@ header {
   text-align: center;
   color: var(--text-light);
   padding: 120px 24px 80px;
-  overflow: hidden; /* Keeps the video within the section bounds */
-  /* Fallback color gradient while the video loads */
-  background: linear-gradient(rgba(14, 36, 104, 0.65), rgba(7, 16, 43, 0.85)),
-              radial-gradient(ellipse at center, #1b357d 0%, #070e24 100%);
+  overflow: hidden; /* Clips any video overflow */
+  background-color: var(--bg-dark); /* Fallback */
 }
 
-/* Background video: acts like a background image/GIF */
+/* 1. Background video (completely taken out of flow) */
 .hero-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* Fills the section without distortion */
+  object-fit: cover;
   z-index: 1;
-  pointer-events: none;    /* Makes it completely unclickable */
+  pointer-events: none;
 }
 
-/* Gradient overlay so the white text stands out clearly */
+/* 2. Semi-transparent gradient overlay */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(14, 36, 104, 0.70), rgba(7, 16, 43, 0.85));
+  background: linear-gradient(
+    rgba(14, 36, 104, 0.70), 
+    rgba(7, 16, 43, 0.85)
+  );
   z-index: 2;
   pointer-events: none;
 }
 
-/* Ensures titles, subtitles, and scroll button sit above the video & overlay */
-.hero > *:not(.hero-video):not(.hero-overlay) {
+/* 3. Text content layer on top */
+.hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 10;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .hero-title {
@@ -214,13 +218,6 @@ header {
   opacity: 0.8;
 }
 
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .scroll-indicator {
   position: absolute;
   bottom: 30px;
@@ -233,6 +230,7 @@ header {
   display: flex;
   justify-content: center;
   padding-top: 8px;
+  z-index: 10;
 }
 
 .scroll-indicator::after {
@@ -245,8 +243,8 @@ header {
 }
 
 @keyframes scrollBounce {
-  0% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(12px); opacity: 0.3; }
+  0%   { transform: translateY(0); opacity: 1; }
+  50%  { transform: translateY(12px); opacity: 0.3; }
   100% { transform: translateY(0); opacity: 1; }
 }
 
