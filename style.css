@@ -153,11 +153,41 @@ header {
   align-items: center;
   text-align: center;
   color: var(--text-light);
+  padding: 120px 24px 80px;
+  overflow: hidden; /* Keeps the video within the section bounds */
+  /* Fallback color gradient while the video loads */
   background: linear-gradient(rgba(14, 36, 104, 0.65), rgba(7, 16, 43, 0.85)),
               radial-gradient(ellipse at center, #1b357d 0%, #070e24 100%);
-  background-size: cover;
-  background-position: center;
-  padding: 120px 24px 80px;
+}
+
+/* Background video: acts like a background image/GIF */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* Fills the section without distortion */
+  z-index: 1;
+  pointer-events: none;    /* Makes it completely unclickable */
+}
+
+/* Gradient overlay so the white text stands out clearly */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(14, 36, 104, 0.70), rgba(7, 16, 43, 0.85));
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Ensures titles, subtitles, and scroll button sit above the video & overlay */
+.hero > *:not(.hero-video):not(.hero-overlay) {
+  position: relative;
+  z-index: 3;
 }
 
 .hero-title {
