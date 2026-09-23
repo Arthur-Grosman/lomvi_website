@@ -3,18 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About The Project – [ORGANIZATION]</title>
+  <title>The Project – [ORGANIZATION]</title>
   
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   
+  <!-- External CSS and JS -->
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
+
+  <!-- Page Specific Styles for the About Page -->
+  <style>
+    .about-hero {
+      padding-top: 100px;
+      padding-bottom: 80px;
+      background-color: var(--bg-light);
+    }
+    .about-callout {
+      padding: 100px 0;
+      background: linear-gradient(rgba(14, 36, 104, 0.9), rgba(9, 21, 58, 0.95)),
+                  linear-gradient(45deg, #0e2468, #16368d);
+      color: var(--text-light);
+    }
+    .about-callout .section-title, 
+    .about-callout .section-desc {
+      color: var(--text-light);
+    }
+    .about-callout .section-desc {
+      opacity: 0.9;
+    }
+    
+    /* Team Grid Styles */
+    .team-section {
+      padding: 60px 0 120px;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 48px 24px;
+      margin-top: 60px;
+    }
+    .team-member {
+      text-align: center;
+    }
+    .team-member .image-placeholder-frame {
+      height: 300px;
+      margin-bottom: 20px;
+      border-radius: var(--border-radius);
+    }
+    .team-member-name {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .team-member-role {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HEADER (Same as Index) -->
+  <!-- HEADER & NAVIGATION -->
   <header style="background: var(--bg-dark); position: relative; padding: 24px 0;">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo">
@@ -26,25 +82,162 @@
       <nav>
         <ul class="nav-menu">
           <li><a href="about.html" class="nav-link" style="color:#93c5fd;">The Project</a></li>
-          <li><a href="#" class="nav-link">Collaborations</a></li>
-          <li><a href="#" class="nav-link">Technology</a></li>
-          <li><a href="#" class="nav-link">Contact</a></li>
+          <li><a href="index.html#collaborations" class="nav-link">Collaborations</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- BLANK PAGE CONTENT -->
-  <section class="section-overview container" style="min-height: 50vh; padding-top: 80px;">
-    <div class="section-header">
-      <h2 class="section-title">About The Project</h2>
+  <!-- WHO WE ARE SECTION -->
+  <section class="section-overview container about-hero">
+    <div class="split-layout">
+      <div class="showcase-text-col" style="text-align: left;">
+        <div class="sub-heading">[Exploration Powered by Young Minds]</div>
+        <h1 class="section-title">[Who We Are]</h1>
+        <p class="section-desc" style="margin-bottom: 24px; text-align: left;">
+          [We are Team PROJECT, a dedicated group of engineering students in the final year of our bachelor’s degree. Our mission is to make frozen lakes safer and support advances in climate science.]
+        </p>
+        <p class="section-desc" style="text-align: left;">
+          [Our project unites young people passionate about robotics and the environment, working closely with experts to address a real-world challenge. We foster a team culture shaped by curiosity, collaboration, and a drive for innovation, supported by experienced mentors in the field.]
+        </p>
+      </div>
+      <div class="showcase-media-col">
+        <div class="image-placeholder-frame" style="height: 400px;">
+          <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span>[TEAM PHOTO PLACEHOLDER]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO SECTION -->
+  <section class="about-callout">
+    <div class="container split-layout">
+      <div class="showcase-media-col">
+        <div class="image-placeholder-frame" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2);">
+          <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span>[VEHICLE / FIN PLACEHOLDER]</span>
+        </div>
+      </div>
+      <div class="showcase-text-col">
+        <h2 class="section-title">[What We Do]</h2>
+        <p class="section-desc" style="margin-bottom: 24px;">
+          [PROJECT is developing a compact underwater vehicle that measures ice thickness from below the surface, without drilling and without stepping onto risky ice. Operating at target locations, it collects high-resolution data that gives researchers and local authorities a clearer picture of current ice conditions.]
+        </p>
+        <p class="section-desc" style="margin-bottom: 40px;">
+          [Because even small variations in thickness can make a big difference, we deliver precise and dependable measurements that help improve safety on frozen lakes and support better decision-making throughout the winter season.]
+        </p>
+        <a href="#" class="btn btn-white">See How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR TEAM CULTURE -->
+  <section class="section-overview container">
+    <div class="section-header" style="max-width: 900px;">
+      <div class="sub-heading">[Where Technology, Science and Purpose Meet]</div>
+      <h2 class="section-title">[Our Team Culture]</h2>
+      <p class="section-desc" style="margin-bottom: 20px;">
+        [We’re a student-driven team that learns by doing and isn’t afraid to push boundaries. We do open brainstorming, fast prototyping, and quick adaptation. Everyone brings different strengths, from mechanics to software, but we’re united by a shared drive to build technology that matters.]
+      </p>
       <p class="section-desc">
-        This is a blank extra page. Content about the project goes here.
+        [Supported by our initiatives, we’re part of a community that fuels innovation and helps us turn ideas into reality. We’re proud to bridge the gap between classroom theory and real-world impact, while supporting each other and celebrating the journey together.]
       </p>
     </div>
   </section>
 
-  <!-- FOOTER (Same as Index) -->
+  <!-- TEAM ROSTER GRID -->
+  <section class="team-section">
+    <div class="container">
+      <h2 class="section-title" style="text-align: center;">[Meet the Team]</h2>
+      
+      <div class="team-grid">
+        <!-- Member 1 -->
+        <div class="team-member">
+          <div class="image-placeholder-frame">
+            <span id="placeholder-text">[PORTRAIT]</span>
+          </div>
+          <div class="team-member-name">[Name 1]</div>
+          <div class="team-member-role">Project Manager</div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-member">
+          <div class="image-placeholder-frame">
+            <span id="placeholder-text">[PORTRAIT]</span>
+          </div>
+          <div class="team-member-name">[Name 2]</div>
+          <div class="team-member-role">Sponsoring Relations Lead</div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-member">
+          <div class="image-placeholder-frame">
+            <span id="placeholder-text">[PORTRAIT]</span>
+          </div>
+          <div class="team-member-name">[Name 3]</div>
+          <div class="team-member-role">Hardware Lead</div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-member">
+          <div class="image-placeholder-frame">
+            <span id="placeholder-text">[PORTRAIT]</span>
+          </div>
+          <div class="team-member-name">[Name 4]</div>
+          <div class="team-member-role">Software Lead</div>
+        </div>
+
+        <!-- Member 5 -->
+        <div class="team-member">
+          <div class="image-placeholder-frame">
+            <span id="placeholder-text">[PORTRAIT]</span>
+          </div>
+          <div class="team-member-name">[Name 5]</div>
+          <div class="team-member-role">Technical Controller</div>
+        </div>
+
+        <!-- Member 6 -->
+        <div class="team-member">
+          <div class="image-placeholder-frame">
+            <span id="placeholder-text">[PORTRAIT]</span>
+          </div>
+          <div class="team-member-name">[Name 6]</div>
+          <div class="team-member-role">Software Team</div>
+        </div>
+
+        <!-- Member 7 -->
+        <div class="team-member">
+          <div class="image-placeholder-frame">
+            <span id="placeholder-text">[PORTRAIT]</span>
+          </div>
+          <div class="team-member-name">[Name 7]</div>
+          <div class="team-member-role">Hardware Team</div>
+        </div>
+        
+        <!-- Member 8 -->
+        <div class="team-member">
+          <div class="image-placeholder-frame">
+            <span id="placeholder-text">[PORTRAIT]</span>
+          </div>
+          <div class="team-member-name">[Name 8]</div>
+          <div class="team-member-role">Hardware Team</div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer id="contact">
     <div class="container footer-columns">
       <div class="footer-address">
@@ -57,12 +250,13 @@
         <a href="#" class="btn btn-white">Reach Out To Us</a>
       </div>
       <div class="social-links">
-        <a href="#" class="social-icon-btn">IN</a>
-        <a href="#" class="social-icon-btn">X</a>
-        <a href="#" class="social-icon-btn">IG</a>
-        <a href="#" class="social-icon-btn">YT</a>
+        <a href="#" class="social-icon-btn" aria-label="LinkedIn">IN</a>
+        <a href="#" class="social-icon-btn" aria-label="X / Twitter">X</a>
+        <a href="#" class="social-icon-btn" aria-label="Instagram">IG</a>
+        <a href="#" class="social-icon-btn" aria-label="YouTube">YT</a>
       </div>
     </div>
+
     <div class="footer-bottom">
       <div class="container">
         © Copyright 2026 [ORGANIZATION NAME]. All Rights Reserved.
