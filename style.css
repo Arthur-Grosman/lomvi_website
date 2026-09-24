@@ -258,6 +258,36 @@ header {
   100% { transform: translateY(0); opacity: 1; }
 }
 
+/* Hero Video Credit (Bottom-Left) */
+.hero-video-credit {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 10;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.hero-video-credit a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: var(--transition);
+}
+
+.hero-video-credit a:hover {
+  color: var(--color-akzent-light);
+}
+
+@media (max-width: 600px) {
+  .hero-video-credit {
+    bottom: 12px;
+    left: 16px;
+    font-size: 0.65rem;
+  }
+}
+
 /* ==========================================================================
    SECTION: MISSION & 3-CARD PILLARS
    ========================================================================== */
