@@ -1,16 +1,25 @@
 /* ==========================================================================
-   CSS VARIABLES & THEME SETUP
+   CSS VARIABLES & NEW COLOR PALETTE
    ========================================================================== */
 :root {
-  --primary-navy: #0e2468;
-  --deep-blue: #001e60;
-  --accent-blue: #2563eb;
-  --text-dark: #121b37;
-  --text-muted: #55627e;
+  /* Specified Palette */
+  --color-korper: #121212;        /* Text, dark pages */
+  --color-akzent: #2388A6;        /* Labels, shapes */
+  --color-bauch: #CDEBF0;         /* Tinted fills */
+  --color-akzent-deep: #145E75;   /* Small accent text */
+  --color-akzent-light: #7CC6DC;  /* Accent on dark */
+  --color-ice: #F4FAFB;           /* Page ground */
+
+  /* Semantic & Compatibility Mappings */
+  --primary-navy: var(--color-akzent-deep);
+  --deep-blue: var(--color-akzent-deep);
+  --accent-blue: var(--color-akzent);
+  --text-dark: var(--color-korper);
+  --text-muted: #50616b;
   --text-light: #ffffff;
-  --bg-light: #f8fafc;
-  --bg-dark: #0b1329;
-  --bg-card: rgba(14, 36, 104, 0.45);
+  --bg-light: var(--color-ice);
+  --bg-dark: var(--color-korper);
+  --bg-card: rgba(20, 94, 117, 0.45);
   --border-radius: 8px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -24,7 +33,7 @@
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-dark);
-  background-color: #ffffff;
+  background-color: var(--color-ice); /* Page ground */
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -40,7 +49,9 @@ a {
   padding: 0 24px;
 }
 
-/* Common Button Styles */
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -57,25 +68,27 @@ a {
 }
 
 .btn-primary {
-  background-color: var(--primary-navy);
+  background-color: var(--color-akzent);
   color: var(--text-light);
-  border-color: var(--primary-navy);
+  border-color: var(--color-akzent);
 }
 
 .btn-primary:hover {
   background-color: transparent;
-  color: var(--primary-navy);
+  color: var(--color-akzent-deep);
+  border-color: var(--color-akzent-deep);
 }
 
 .btn-white {
   background-color: #ffffff;
-  color: var(--primary-navy);
+  color: var(--color-akzent-deep);
   border-color: #ffffff;
 }
 
 .btn-white:hover {
   background-color: transparent;
   color: #ffffff;
+  border-color: #ffffff;
 }
 
 .btn-outline {
@@ -86,7 +99,7 @@ a {
 
 .btn-outline:hover {
   background-color: #ffffff;
-  color: var(--primary-navy);
+  color: var(--color-akzent-deep);
 }
 
 /* ==========================================================================
@@ -99,7 +112,7 @@ header {
   width: 100%;
   z-index: 1000;
   padding: 24px 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+  background: linear-gradient(to bottom, rgba(18, 18, 18, 0.75), transparent);
 }
 
 .nav-container {
@@ -138,7 +151,7 @@ header {
 
 .nav-link:hover {
   opacity: 1;
-  color: #93c5fd;
+  color: var(--color-akzent-light); /* Accent on dark */
 }
 
 /* ==========================================================================
@@ -155,11 +168,10 @@ header {
   text-align: center;
   color: var(--text-light);
   padding: 120px 24px 80px;
-  overflow: hidden; /* Clips any video overflow */
-  background-color: var(--bg-dark); /* Fallback */
+  overflow: hidden;
+  background-color: var(--bg-dark); /* Körper */
 }
 
-/* 1. Background video (completely taken out of flow) */
 .hero-video {
   position: absolute;
   top: 0;
@@ -171,7 +183,6 @@ header {
   pointer-events: none;
 }
 
-/* 2. Semi-transparent gradient overlay */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -179,14 +190,13 @@ header {
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    rgba(14, 36, 104, 0.70), 
-    rgba(7, 16, 43, 0.85)
+    rgba(20, 94, 117, 0.75),  /* Akzent deep tint */
+    rgba(18, 18, 18, 0.90)    /* Körper dark tone */
   );
   z-index: 2;
   pointer-events: none;
 }
 
-/* 3. Text content layer on top */
 .hero-content {
   position: relative;
   z-index: 10;
@@ -215,7 +225,7 @@ header {
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 40px;
-  opacity: 0.8;
+  color: var(--color-akzent-light); /* Accent on dark */
 }
 
 .scroll-indicator {
@@ -225,7 +235,7 @@ header {
   transform: translateX(-50%);
   width: 28px;
   height: 48px;
-  border: 2px solid rgba(255, 255, 255, 0.6);
+  border: 2px solid var(--color-akzent-light);
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -237,7 +247,7 @@ header {
   content: '';
   width: 4px;
   height: 8px;
-  background-color: #ffffff;
+  background-color: var(--color-akzent-light);
   border-radius: 2px;
   animation: scrollBounce 2s infinite ease-in-out;
 }
@@ -253,7 +263,7 @@ header {
    ========================================================================== */
 .section-overview {
   padding: 100px 0;
-  background-color: #ffffff;
+  background-color: var(--color-ice); /* Page ground */
   text-align: center;
 }
 
@@ -265,7 +275,7 @@ header {
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
-  color: var(--primary-navy);
+  color: var(--color-akzent-deep); /* Deep high-contrast title */
   margin-bottom: 20px;
   line-height: 1.2;
 }
@@ -288,7 +298,7 @@ header {
   border-radius: var(--border-radius);
   padding: 60px 32px;
   color: var(--text-light);
-  background: linear-gradient(135deg, rgba(14, 36, 104, 0.9), rgba(6, 17, 50, 0.95));
+  background: linear-gradient(135deg, rgba(20, 94, 117, 0.95), rgba(18, 18, 18, 0.98));
   overflow: hidden;
   min-height: 320px;
   display: flex;
@@ -296,14 +306,15 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(18, 18, 18, 0.08);
   transition: var(--transition);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(124, 198, 220, 0.2);
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(14, 36, 104, 0.25);
+  border-color: var(--color-akzent-light);
+  box-shadow: 0 16px 40px rgba(20, 94, 117, 0.25);
 }
 
 .card-title {
@@ -312,11 +323,12 @@ header {
   margin-bottom: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: var(--color-akzent-light); /* Accent on dark card */
 }
 
 .card-text {
   font-size: 0.95rem;
-  opacity: 0.9;
+  opacity: 0.95;
   line-height: 1.6;
 }
 
@@ -325,8 +337,8 @@ header {
    ========================================================================== */
 .section-callout {
   padding: 120px 0;
-  background: linear-gradient(rgba(14, 36, 104, 0.85), rgba(9, 21, 58, 0.9)),
-              linear-gradient(45deg, #0e2468, #16368d);
+  background: linear-gradient(rgba(20, 94, 117, 0.90), rgba(18, 18, 18, 0.95)),
+              linear-gradient(45deg, var(--color-akzent-deep), var(--color-akzent));
   color: var(--text-light);
 }
 
@@ -353,7 +365,7 @@ header {
    ========================================================================== */
 .section-partners {
   padding: 90px 0;
-  background-color: var(--bg-light);
+  background-color: var(--color-ice); /* Page ground */
   text-align: center;
 }
 
@@ -366,7 +378,7 @@ header {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--accent-blue);
+  color: var(--color-akzent-deep); /* Small accent text */
   margin-bottom: 12px;
 }
 
@@ -379,7 +391,7 @@ header {
 }
 
 .partner-logo-box {
-  background: #ffffff;
+  background: var(--color-bauch); /* Tinted fills */
   height: 90px;
   border-radius: 6px;
   display: flex;
@@ -388,15 +400,16 @@ header {
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #94a3b8;
-  border: 1px dashed #cbd5e1;
+  color: var(--color-akzent-deep);
+  border: 1px solid rgba(35, 136, 166, 0.3);
   padding: 16px;
   transition: var(--transition);
 }
 
 .partner-logo-box:hover {
-  border-color: var(--accent-blue);
-  color: var(--primary-navy);
+  border-color: var(--color-akzent);
+  color: var(--color-korper);
+  background: #ffffff;
   transform: translateY(-3px);
 }
 
@@ -405,7 +418,7 @@ header {
    ========================================================================== */
 .section-showcase {
   padding: 100px 0;
-  background-color: var(--bg-dark);
+  background-color: var(--color-korper); /* Dark page / section */
   color: var(--text-light);
 }
 
@@ -431,21 +444,20 @@ header {
 .image-placeholder-frame {
   width: 100%;
   height: 380px;
-  background: #142145;
+  background: #192327;
   border-radius: var(--border-radius);
-  border: 2px dashed #2f457e;
+  border: 2px dashed var(--color-akzent); /* Akzent shapes/borders */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  color: #64748b;
+  color: var(--color-akzent-light);
   font-weight: 600;
   overflow: hidden;
   position: relative;
 }
 
-/* Image hiding magic in case you put an image in there */
 .image-placeholder-frame img {
   width: 100%;
   height: 100%;
@@ -460,10 +472,10 @@ header {
    FOOTER
    ========================================================================== */
 footer {
-  background-color: #1a202c;
-  color: #cbd5e1;
+  background-color: var(--color-korper); /* Dark pages */
+  color: #cdebf0;
   padding-top: 80px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(205, 235, 240, 0.15);
 }
 
 .footer-columns {
@@ -499,7 +511,7 @@ footer {
   width: 40px;
   height: 40px;
   border-radius: 6px;
-  background-color: #2d3748;
+  background-color: #212c30;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -510,7 +522,7 @@ footer {
 }
 
 .social-icon-btn:hover {
-  background-color: var(--accent-blue);
+  background-color: var(--color-akzent);
   transform: translateY(-3px);
 }
 
@@ -519,7 +531,7 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 0.85rem;
-  color: #64748b;
+  color: #7b949c;
 }
 
 /* ==========================================================================
