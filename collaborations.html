@@ -14,18 +14,54 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 
-  <!-- Page Specific Styles for the Collaborations Page -->
+  <!-- Page Specific Styles for Collaborations -->
   <style>
+    /* Dark, high-contrast Hero section */
     .collab-hero {
-      padding-top: 120px;
-      padding-bottom: 80px;
-      background-color: var(--bg-light);
+      padding-top: 140px;
+      padding-bottom: 100px;
+      background: linear-gradient(135deg, rgba(20, 94, 117, 0.95), rgba(18, 18, 18, 0.98)),
+                  linear-gradient(45deg, var(--color-akzent-deep), var(--color-korper));
+      color: var(--text-light);
     }
     
-    /* Collaborations Grid Styles */
+    .collab-hero .sub-heading {
+      color: var(--color-akzent-light); /* Accent on dark */
+      margin-bottom: 12px;
+    }
+
+    .collab-hero .section-title {
+      color: #ffffff !important;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .collab-hero .section-desc {
+      color: #e2e8f0 !important;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    .collab-hero .image-placeholder-frame {
+      height: 350px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px dashed var(--color-akzent-light);
+      color: var(--color-akzent-light);
+    }
+
+    /* Partner Grid Section (Page Ground: Ice) */
     .collab-section {
-      padding: 60px 0 120px;
-      background-color: #ffffff;
+      padding: 90px 0 120px;
+      background-color: var(--color-ice); /* Sharp contrast against dark hero */
+    }
+
+    .collab-section .section-title {
+      color: var(--color-akzent-deep);
+    }
+
+    .collab-section .section-desc {
+      color: var(--color-korper);
     }
     
     .collab-grid {
@@ -36,8 +72,8 @@
     }
     
     .collab-card {
-      background: var(--bg-light);
-      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      border: 1px solid rgba(35, 136, 166, 0.25);
       border-radius: var(--border-radius);
       padding: 32px 24px;
       text-align: center;
@@ -45,25 +81,27 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      box-shadow: 0 4px 15px rgba(18, 18, 18, 0.04);
     }
     
     .collab-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(14, 36, 104, 0.08);
-      border-color: var(--accent-blue);
+      box-shadow: 0 14px 30px rgba(20, 94, 117, 0.15);
+      border-color: var(--color-akzent);
     }
     
+    /* Logo Box uses Bauch (#CDEBF0) tinted fill */
     .collab-logo-placeholder {
       width: 100%;
       height: 140px;
-      background: #ffffff;
-      border: 1px dashed #cbd5e1;
+      background: var(--color-bauch);
+      border: 1px dashed var(--color-akzent);
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 24px;
-      color: #94a3b8;
+      color: var(--color-akzent-deep);
       font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 1px;
@@ -73,24 +111,24 @@
     .collab-name {
       font-size: 1.25rem;
       font-weight: 700;
-      color: var(--primary-navy);
+      color: var(--color-akzent-deep);
       margin-bottom: 12px;
     }
     
     .collab-desc {
       font-size: 0.95rem;
-      color: var(--text-muted);
+      color: var(--color-korper);
       line-height: 1.6;
       margin-bottom: 20px;
-      flex-grow: 1; /* Pushes the link to the bottom if descriptions vary in length */
+      flex-grow: 1;
     }
 
     .collab-link {
       font-size: 0.85rem;
       font-weight: 700;
-      color: var(--accent-blue);
+      color: var(--color-akzent);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -98,7 +136,7 @@
     }
 
     .collab-link:hover {
-      color: var(--primary-navy);
+      color: var(--color-akzent-deep);
       gap: 10px;
     }
   </style>
@@ -106,7 +144,7 @@
 <body>
 
   <!-- HEADER & NAVIGATION -->
-  <header style="background: var(--bg-dark); position: relative; padding: 24px 0;">
+  <header style="background: var(--color-korper); position: relative; padding: 24px 0;">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
@@ -117,30 +155,34 @@
       <nav>
         <ul class="nav-menu">
           <li><a href="about.html" class="nav-link">The Project</a></li>
-          <!-- Highlighted Active Link -->
-          <li><a href="collaborations.html" class="nav-link" style="color:#93c5fd;">Collaborations</a></li>
+          <!-- Highlighted Active Link using Akzent light (#7CC6DC) -->
+          <li><a href="collaborations.html" class="nav-link" style="color: var(--color-akzent-light);">Collaborations</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION (Based on ORBIT's Partner Network intro) -->
-  <section class="section-overview container collab-hero">
-    <div class="split-layout">
+  <!-- HERO SECTION -->
+  <section class="collab-hero">
+    <div class="container split-layout">
       <div class="showcase-text-col" style="text-align: left;">
         <div class="sub-heading">[Collaboration & Support]</div>
         <h1 class="section-title">Partner Network</h1>
-        <p class="section-desc" style="text-align: left;">
-          [PROJECT NAME] moves through a network of <span style="color: var(--accent-blue); font-weight: 600;">research labs</span>, <span style="color: var(--accent-blue); font-weight: 600;">academic organizations</span>, and <span style="color: var(--accent-blue); font-weight: 600;">industrial partners</span> aligned around building the robotic foundation for underwater operations and sustainable exploration.
+        <p class="section-desc">
+          [PROJECT NAME] moves through a network of 
+          <span style="color: var(--color-akzent-light); font-weight: 600;">research labs</span>, 
+          <span style="color: var(--color-akzent-light); font-weight: 600;">academic organizations</span>, and 
+          <span style="color: var(--color-akzent-light); font-weight: 600;">industrial partners</span> 
+          aligned around building the robotic foundation for underwater operations and sustainable exploration.
         </p>
       </div>
       <div class="showcase-media-col">
-        <div class="image-placeholder-frame" style="height: 350px; background: #f1f5f9; border-color: #cbd5e1; color: #64748b;">
+        <div class="image-placeholder-frame">
           <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
           </svg>
-          <span>[HANDSHAKE / NETWORK IMAGE]</span>
+          <span style="font-weight: 700;">[HANDSHAKE / NETWORK IMAGE]</span>
         </div>
       </div>
     </div>
@@ -151,8 +193,10 @@
     <div class="container">
       
       <!-- Academic & Research Partners -->
-      <h2 class="section-title" style="font-size: 2rem; margin-bottom: 10px;">Research & Academia</h2>
-      <p class="section-desc" style="margin-bottom: 30px;">Labs and universities pushing the boundaries of technology with us.</p>
+      <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 10px;">Research & Academia</h2>
+      <p class="section-desc" style="margin-bottom: 30px; font-size: 1.1rem;">
+        Labs and universities pushing the boundaries of technology with us.
+      </p>
       
       <div class="collab-grid" style="margin-bottom: 80px;">
         <!-- Partner Card 1 -->
@@ -161,8 +205,10 @@
             <span>[ETH ZURICH LOGO]</span>
           </div>
           <h3 class="collab-name">ETH Zurich</h3>
-          <p class="collab-desc">[Short description of their role, e.g., "Providing academic guidance, lab facilities, and core research frameworks for our focus project."]</p>
-          <a href="https://ethz.ch/" class="collab-link" target="_blank">Visit Website &rarr;</a>
+          <p class="collab-desc">
+            [Short description of their role, e.g., "Providing academic guidance, lab facilities, and core research frameworks for our focus project."]
+          </p>
+          <a href="https://ethz.ch/" class="collab-link" target="_blank" rel="noopener noreferrer">Visit Website &rarr;</a>
         </article>
 
         <!-- Partner Card 2 -->
@@ -171,33 +217,17 @@
             <span>[SRL LOGO]</span>
           </div>
           <h3 class="collab-name">Soft Robotics Lab</h3>
-          <p class="collab-desc">[Short description, e.g., "Collaborating on advanced silicone molding and flexible actuator design."]</p>
-          <a href="https://srl.ethz.ch/" class="collab-link" target="_blank">Visit Website &rarr;</a>
+          <p class="collab-desc">
+            [Collaborating on advanced silicone molding and flexible actuator design.]
+          </p>
+          <a href="https://srl.ethz.ch/" class="collab-link" target="_blank" rel="noopener noreferrer">Visit Website &rarr;</a>
         </article>
-        
       </div>
-
-      <!-- Industrial & Tech Sponsors -->
-      <!--
-      <h2 class="section-title" style="font-size: 2rem; margin-bottom: 10px;">Industry & Technology Partners</h2>
-      <p class="section-desc" style="margin-bottom: 30px;">The companies providing hardware, software, and expertise to make our vision a reality.</p>
-      
-      
-      <div class="collab-grid">
-        <article class="collab-card">
-          <div class="collab-logo-placeholder">
-            <span>[YOUR PARTNER]</span>
-          </div>
-          <h3 class="collab-name">[Partner Name]</h3>
-          <p class="collab-desc">[Add your own description of the partnership, what they supply, or why the collaboration exists.]</p>
-          <a href="#" class="collab-link" target="_blank">Visit Website &rarr;</a>
-        </article>
-      </div>-->
 
     </div>
   </section>
 
-  <!-- CTA SECTION (Help Us Shape The Future) -->
+  <!-- CTA SECTION -->
   <section class="section-callout" style="text-align: center;">
     <div class="container">
       <div class="callout-content" style="margin: 0 auto;">
@@ -211,7 +241,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer id="contact">
+  <footer>
     <div class="container footer-columns">
       <div class="footer-address">
         <strong>[ORGANIZATION NAME]</strong>
