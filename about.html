@@ -14,30 +14,33 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 
-  <!-- Page Specific Styles for the About Page -->
+  <!-- Page Specific Styles for the About Page (Adapted to Palette) -->
   <style>
     .about-hero {
       padding-top: 100px;
       padding-bottom: 80px;
-      background-color: var(--bg-light);
+      background-color: var(--color-ice); /* Page ground */
     }
+
+    /* Updated with Akzent deep (#145E75) and Körper (#121212) */
     .about-callout {
       padding: 100px 0;
-      background: linear-gradient(rgba(14, 36, 104, 0.9), rgba(9, 21, 58, 0.95)),
-                  linear-gradient(45deg, #0e2468, #16368d);
+      background: linear-gradient(rgba(20, 94, 117, 0.92), rgba(18, 18, 18, 0.95)),
+                  linear-gradient(45deg, var(--color-akzent-deep), var(--color-akzent));
       color: var(--text-light);
     }
-    .about-callout .section-title, 
-    .about-callout .section-desc {
+    .about-callout .section-title {
       color: var(--text-light);
     }
     .about-callout .section-desc {
-      opacity: 0.9;
+      color: var(--color-bauch); /* Bauch tinted text on dark */
+      opacity: 0.95;
     }
     
     /* Team Grid Styles */
     .team-section {
       padding: 60px 0 120px;
+      background-color: var(--color-ice); /* Page ground */
     }
     .team-grid {
       display: grid;
@@ -48,30 +51,37 @@
     .team-member {
       text-align: center;
     }
+    
+    /* Adapted placeholders to Bauch (#CDEBF0) tinted fills */
     .team-member .image-placeholder-frame {
       height: 300px;
       margin-bottom: 20px;
       border-radius: var(--border-radius);
+      background-color: var(--color-bauch); /* Bauch: tinted fills */
+      border: 2px dashed var(--color-akzent); /* Akzent: shapes/labels */
+      color: var(--color-akzent-deep);
     }
+    
     .team-member-name {
       font-weight: 700;
       font-size: 1.15rem;
-      color: var(--text-dark);
+      color: var(--color-korper); /* Körper: text */
       margin-bottom: 4px;
     }
+    
     .team-member-role {
-      font-size: 0.9rem;
-      color: var(--text-muted);
+      font-size: 0.85rem;
+      color: var(--color-akzent-deep); /* Akzent deep: small accent text */
       text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 600;
+      letter-spacing: 1.5px;
+      font-weight: 700;
     }
   </style>
 </head>
 <body>
 
   <!-- HEADER & NAVIGATION -->
-  <header style="background: var(--bg-dark); position: relative; padding: 24px 0;">
+  <header style="background: var(--color-korper); position: relative; padding: 24px 0;">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
@@ -81,7 +91,8 @@
       </a>
       <nav>
         <ul class="nav-menu">
-          <li><a href="about.html" class="nav-link" style="color:#93c5fd;">The Project</a></li>
+          <!-- Active Link using Akzent light (#7CC6DC) -->
+          <li><a href="about.html" class="nav-link" style="color: var(--color-akzent-light);">The Project</a></li>
           <li><a href="collaborations.html" class="nav-link">Collaborations</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
@@ -103,7 +114,8 @@
         </p>
       </div>
       <div class="showcase-media-col">
-        <div class="image-placeholder-frame" style="height: 400px;">
+        <!-- Replaced dark frame with Bauch tinted fill -->
+        <div class="image-placeholder-frame" style="height: 400px; background-color: var(--color-bauch); border-color: var(--color-akzent); color: var(--color-akzent-deep);">
           <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
             <circle cx="8.5" cy="8.5" r="1.5"></circle>
@@ -119,7 +131,7 @@
   <section class="about-callout">
     <div class="container split-layout">
       <div class="showcase-media-col">
-        <div class="image-placeholder-frame" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2);">
+        <div class="image-placeholder-frame" style="background: rgba(255,255,255,0.06); border-color: var(--color-akzent-light); color: var(--color-akzent-light);">
           <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
             <circle cx="8.5" cy="8.5" r="1.5"></circle>
@@ -142,7 +154,7 @@
   </section>
 
   <!-- OUR TEAM CULTURE -->
-  <section class="section-overview container">
+  <section class="section-overview container" style="background-color: var(--color-ice);">
     <div class="section-header" style="max-width: 900px;">
       <div class="sub-heading">[Where Technology, Science and Purpose Meet]</div>
       <h2 class="section-title">[Our Team Culture]</h2>
@@ -256,7 +268,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer id="contact">
+  <footer>
     <div class="container footer-columns">
       <div class="footer-address">
         <strong>[ORGANIZATION NAME]</strong>
