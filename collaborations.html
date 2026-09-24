@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collaborations – [PROJECT NAME]</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- External CSS and JS -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+  <!-- Page Specific Styles for the Collaborations Page -->
+  <style>
+    .collab-hero {
+      padding-top: 120px;
+      padding-bottom: 80px;
+      background-color: var(--bg-light);
+    }
+    
+    /* Collaborations Grid Styles */
+    .collab-section {
+      padding: 60px 0 120px;
+      background-color: #ffffff;
+    }
+    
+    .collab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+    
+    .collab-card {
+      background: var(--bg-light);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--border-radius);
+      padding: 32px 24px;
+      text-align: center;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .collab-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(14, 36, 104, 0.08);
+      border-color: var(--accent-blue);
+    }
+    
+    .collab-logo-placeholder {
+      width: 100%;
+      height: 140px;
+      background: #ffffff;
+      border: 1px dashed #cbd5e1;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      overflow: hidden;
+    }
+    
+    .collab-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 12px;
+    }
+    
+    .collab-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1; /* Pushes the link to the bottom if descriptions vary in length */
+    }
+
+    .collab-link {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .collab-link:hover {
+      color: var(--primary-navy);
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header style="background: var(--bg-dark); position: relative; padding: 24px 0;">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="12 2 2 22 22 22 12 2"></polygon>
+        </svg>
+        [LOGO / BRAND]
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="about.html" class="nav-link">The Project</a></li>
+          <!-- Highlighted Active Link -->
+          <li><a href="collaborations.html" class="nav-link" style="color:#93c5fd;">Collaborations</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION (Based on ORBIT's Partner Network intro) -->
+  <section class="section-overview container collab-hero">
+    <div class="split-layout">
+      <div class="showcase-text-col" style="text-align: left;">
+        <div class="sub-heading">[Collaboration & Support]</div>
+        <h1 class="section-title">Partner Network</h1>
+        <p class="section-desc" style="text-align: left;">
+          [PROJECT NAME] moves through a network of <span style="color: var(--accent-blue); font-weight: 600;">research labs</span>, <span style="color: var(--accent-blue); font-weight: 600;">academic organizations</span>, and <span style="color: var(--accent-blue); font-weight: 600;">industrial partners</span> aligned around building the robotic foundation for underwater operations and sustainable exploration.
+        </p>
+      </div>
+      <div class="showcase-media-col">
+        <div class="image-placeholder-frame" style="height: 350px; background: #f1f5f9; border-color: #cbd5e1; color: #64748b;">
+          <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          </svg>
+          <span>[HANDSHAKE / NETWORK IMAGE]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER GRID SECTION -->
+  <section class="collab-section">
+    <div class="container">
+      
+      <!-- Academic & Research Partners -->
+      <h2 class="section-title" style="font-size: 2rem; margin-bottom: 10px;">Research & Academia</h2>
+      <p class="section-desc" style="margin-bottom: 30px;">Labs and universities pushing the boundaries of technology with us.</p>
+      
+      <div class="collab-grid" style="margin-bottom: 80px;">
+        <!-- Partner Card 1 -->
+        <article class="collab-card">
+          <div class="collab-logo-placeholder">
+            <span>[ETH ZURICH LOGO]</span>
+          </div>
+          <h3 class="collab-name">ETH Zurich</h3>
+          <p class="collab-desc">[Short description of their role, e.g., "Providing academic guidance, lab facilities, and core research frameworks for our focus project."]</p>
+          <a href="#" class="collab-link" target="_blank">Visit Website &rarr;</a>
+        </article>
+
+        <!-- Partner Card 2 -->
+        <article class="collab-card">
+          <div class="collab-logo-placeholder">
+            <span>[SRL LOGO]</span>
+          </div>
+          <h3 class="collab-name">Soft Robotics Lab</h3>
+          <p class="collab-desc">[Short description, e.g., "Collaborating on advanced silicone molding and flexible actuator design."]</p>
+          <a href="#" class="collab-link" target="_blank">Visit Website &rarr;</a>
+        </article>
+        
+        <!-- Partner Card 3 -->
+        <article class="collab-card">
+          <div class="collab-logo-placeholder">
+            <span>[ORCA LOGO]</span>
+          </div>
+          <h3 class="collab-name">ORCA</h3>
+          <p class="collab-desc">[Short description of their contribution or specific domain expertise in your project's lifecycle.]</p>
+          <a href="#" class="collab-link" target="_blank">Visit Website &rarr;</a>
+        </article>
+      </div>
+
+      <!-- Industrial & Tech Sponsors -->
+      <h2 class="section-title" style="font-size: 2rem; margin-bottom: 10px;">Industry & Technology Partners</h2>
+      <p class="section-desc" style="margin-bottom: 30px;">The companies providing hardware, software, and expertise to make our vision a reality.</p>
+      
+      <div class="collab-grid">
+        <!-- Partner Card 4 -->
+        <article class="collab-card">
+          <div class="collab-logo-placeholder">
+            <span>[NVIDIA LOGO]</span>
+          </div>
+          <h3 class="collab-name">NVIDIA</h3>
+          <p class="collab-desc">[E.g., "Powering our autonomous underwater navigation and computer vision systems with edge AI hardware."]</p>
+          <a href="#" class="collab-link" target="_blank">Visit Website &rarr;</a>
+        </article>
+
+        <!-- Partner Card 5 -->
+        <article class="collab-card">
+          <div class="collab-logo-placeholder">
+            <span>[AWS LOGO]</span>
+          </div>
+          <h3 class="collab-name">AWS</h3>
+          <p class="collab-desc">[E.g., "Providing cloud infrastructure for real-time telemetry processing and environmental data mapping."]</p>
+          <a href="#" class="collab-link" target="_blank">Visit Website &rarr;</a>
+        </article>
+
+        <!-- Partner Card 6 -->
+        <article class="collab-card">
+          <div class="collab-logo-placeholder">
+            <span>[RAPID MFG LOGO]</span>
+          </div>
+          <h3 class="collab-name">Rapid Manufacturing</h3>
+          <p class="collab-desc">[E.g., "Supplying high-precision 3D printed components and rapid prototyping services for iterative design."]</p>
+          <a href="#" class="collab-link" target="_blank">Visit Website &rarr;</a>
+        </article>
+
+        <!-- Partner Card 7 -->
+        <article class="collab-card">
+          <div class="collab-logo-placeholder">
+            <span>[BOSCH LOGO]</span>
+          </div>
+          <h3 class="collab-name">Bosch</h3>
+          <p class="collab-desc">[E.g., "Providing robust IMU sensors and reliable electronic components for deep-water stability."]</p>
+          <a href="#" class="collab-link" target="_blank">Visit Website &rarr;</a>
+        </article>
+
+        <!-- Partner Card 8 -->
+        <article class="collab-card">
+          <div class="collab-logo-placeholder">
+            <span>[HUBER+SUHNER LOGO]</span>
+          </div>
+          <h3 class="collab-name">Huber+Suhner</h3>
+          <p class="collab-desc">[E.g., "Equipping our robots with specialized waterproof cabling and high-frequency communication lines."]</p>
+          <a href="#" class="collab-link" target="_blank">Visit Website &rarr;</a>
+        </article>
+
+        <!-- Partner Card 9 -->
+        <article class="collab-card">
+          <div class="collab-logo-placeholder">
+            <span>[YOUR PARTNER]</span>
+          </div>
+          <h3 class="collab-name">[Partner Name]</h3>
+          <p class="collab-desc">[Add your own description of the partnership, what they supply, or why the collaboration exists.]</p>
+          <a href="#" class="collab-link" target="_blank">Visit Website &rarr;</a>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA SECTION (Help Us Shape The Future) -->
+  <section class="section-callout" style="text-align: center;">
+    <div class="container">
+      <div class="callout-content" style="margin: 0 auto;">
+        <h2 class="callout-title">Help Us Shape the Future</h2>
+        <p class="callout-text">
+          Become a [PROJECT NAME] partner and help build the robotic systems needed for scalable underwater operations and to accelerate environmental research.
+        </p>
+        <a href="mailto:[YOUR-EMAIL@ORGANIZATION.COM]" class="btn btn-white">Become a Partner</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="container footer-columns">
+      <div class="footer-address">
+        <strong>[ORGANIZATION NAME]</strong>
+        [Department or Initiative Name]<br>
+        [Street Address, Building / Room]<br>
+        [Postal Code, City, Country]
+      </div>
+
+      <div class="footer-center">
+        <a href="contact.html" class="btn btn-white">Reach Out To Us</a>
+      </div>
+
+      <div class="social-links">
+        <a href="#" class="social-icon-btn" aria-label="LinkedIn">IN</a>
+        <a href="#" class="social-icon-btn" aria-label="Facebook">FB</a>
+        <a href="#" class="social-icon-btn" aria-label="Instagram">IG</a>
+        <a href="#" class="social-icon-btn" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        © Copyright 2026 [ORGANIZATION NAME]. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
