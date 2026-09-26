@@ -132,12 +132,11 @@ header {
   gap: 8px;
 }
 
-/*
 .brand-logo img {
-  height: 32px;
+  height: 128px;
   width: auto;
   display: block;
-}*/
+}
 
 .nav-menu {
   display: flex;
