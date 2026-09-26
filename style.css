@@ -387,8 +387,12 @@ header {
    ========================================================================== */
 .section-callout {
   padding: 120px 0;
-  background: linear-gradient(rgba(20, 94, 117, 0.90), rgba(18, 18, 18, 0.95)),
-              linear-gradient(45deg, var(--color-akzent-deep), var(--color-akzent));
+  background-image:
+    linear-gradient(rgba(20, 94, 117, 0.90), rgba(18, 18, 18, 0.95)),
+    url('images/environments.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--text-light);
 }
 
