@@ -223,7 +223,7 @@ header {
   font-size: clamp(0.9rem, 1.5vw, 1.15rem);
   letter-spacing: 5px;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: none;
   margin-bottom: 40px;
   color: var(--color-akzent-light); /* Accent on dark */
 }
