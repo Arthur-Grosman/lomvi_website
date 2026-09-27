@@ -109,7 +109,23 @@
       letter-spacing: 1px;
       overflow: hidden;
     }
-    
+
+    .collab-logo-placeholder img {
+      max-width: 70%;
+      max-height: 70%;
+      object-fit: contain;
+    }
+
+    .collab-logo-placeholder img[src*="eth-logo-pos"] {
+      max-width: 125%;
+      max-height: 125%;
+    }
+
+    .collab-logo-placeholder img[src*="soft-robotics-lab"] {
+      max-width: 75%;
+      max-height: 75%;
+    }
+
     .collab-name {
       font-size: 1.25rem;
       font-weight: 700;
@@ -197,26 +213,26 @@
       <div class="collab-grid" style="margin-bottom: 80px;">
         <!-- Partner Card 1 -->
         <article class="collab-card">
-          <div class="collab-logo-placeholder">
-            <span>[ETH ZURICH LOGO]</span>
-          </div>
-          <h3 class="collab-name">ETH Zurich</h3>
-          <p class="collab-desc">
-            Providing the institutional foundation, academic guidance, and research infrastructure for our project.
-          </p>
-          <a href="https://ethz.ch/" class="collab-link" target="_blank" rel="noopener noreferrer">Visit Website &rarr;</a>
+            <div class="collab-logo-placeholder">
+                <img src="images/eth-logo-pos.svg" alt="ETH Zurich">
+            </div>
+            <h3 class="collab-name">ETH Zurich</h3>
+            <p class="collab-desc">
+                Providing the institutional foundation, academic guidance, and research infrastructure for our project.
+            </p>
+            <a href="https://ethz.ch/" class="collab-link" target="_blank" rel="noopener noreferrer">Visit Website &rarr;</a>
         </article>
 
         <!-- Partner Card 2 -->
         <article class="collab-card">
-          <div class="collab-logo-placeholder">
-            <span>[SRL LOGO]</span>
-          </div>
-          <h3 class="collab-name">Soft Robotics Lab</h3>
-          <p class="collab-desc">
-            Offering direct scientific mentorship, cutting-edge facilities, and expertise in compliant structures and soft actuation.
-          </p>
-          <a href="https://srl.ethz.ch/" class="collab-link" target="_blank" rel="noopener noreferrer">Visit Website &rarr;</a>
+            <div class="collab-logo-placeholder">
+                <img src="images/soft-robotics-lab.svg" alt="Soft Robotics Lab">
+            </div>
+            <h3 class="collab-name">Soft Robotics Lab</h3>
+            <p class="collab-desc">
+                Offering direct scientific mentorship, cutting-edge facilities, and expertise in compliant structures and soft actuation.
+            </p>
+            <a href="https://srl.ethz.ch/" class="collab-link" target="_blank" rel="noopener noreferrer">Visit Website &rarr;</a>
         </article>
       </div>
 
