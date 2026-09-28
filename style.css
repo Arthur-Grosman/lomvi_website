@@ -470,13 +470,13 @@ header {
 }
 
 .partner-logo-box img[src*="eth-logo-pos"] {
-  max-height: 125%;
-  max-width: 125%;
+  max-height: 250%;
+  max-width: 250%;
 }
 
 .partner-logo-box img[src*="soft-robotics-lab"] {
-  max-height: 75%;
-  max-width: 75%;
+  max-height: 150%;
+  max-width: 150%;
 }
 /* ==========================================================================
    SECTION: SPLIT PROMOTION / HARDWARE SHOWCASE
