@@ -701,4 +701,12 @@ footer {
   .collab-hero .image-placeholder-frame {
     height: 260px !important;
   }
+
+  .container {
+    padding: 0 28px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
 }
