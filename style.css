@@ -725,4 +725,12 @@ footer {
   .team-member .image-placeholder-frame img[src*="Michelis"] {
     object-position: center 30%;
   }
+
+  .email-address-link {
+    font-size: 1rem;
+    word-break: normal;
+    overflow-wrap: normal;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
