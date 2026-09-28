@@ -3,6 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Website successfully loaded.");
 
     // You can add interactive elements here later, such as a mobile nav drawer
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+    });
+    }
     
     // Hide placeholder text/icons if the profile.jpg successfully loads
     const profileImg = document.querySelector('.image-placeholder-frame img');

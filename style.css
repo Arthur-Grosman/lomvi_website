@@ -160,6 +160,24 @@ header {
   color: var(--color-akzent-light); /* Accent on dark */
 }
 
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  width: 26px;
+  height: 2px;
+  background: #ffffff;
+  display: block;
+}
+
+
 /* ==========================================================================
    HERO / BANNER SECTION
    ========================================================================== */
@@ -470,13 +488,17 @@ header {
 }
 
 .partner-logo-box img[src*="eth-logo-pos"] {
-  max-height: 300%;
-  max-width: 300%;
+  width: clamp(140px, 22vw, 220px);
+  height: auto;
+  max-width: none;
+  max-height: none;
 }
 
 .partner-logo-box img[src*="soft-robotics-lab"] {
-  max-height: 200%;
-  max-width: 200%;
+  width: clamp(90px, 14vw, 150px);
+  height: auto;
+  max-width: none;
+  max-height: none;
 }
 /* ==========================================================================
    SECTION: SPLIT PROMOTION / HARDWARE SHOWCASE
@@ -647,7 +669,36 @@ footer {
     justify-content: center;
   }
 
+  .nav-toggle {
+    display: flex;
+  }
+
   .nav-menu {
-    display: none; 
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-korper);
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 24px 24px;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu li {
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+@media (max-width: 600px) {
+  .image-placeholder-frame,
+  .about-hero .image-placeholder-frame,
+  .collab-hero .image-placeholder-frame {
+    height: 260px !important;
   }
 }
