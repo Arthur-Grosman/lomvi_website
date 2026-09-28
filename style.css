@@ -727,7 +727,7 @@ footer {
   }
 
   .email-address-link {
-    font-size: 1rem;
+    font-size: 0.8rem;
     word-break: normal;
     overflow-wrap: normal;
     flex-wrap: wrap;
