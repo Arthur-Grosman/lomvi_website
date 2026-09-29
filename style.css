@@ -697,35 +697,19 @@ footer {
    header {
     background: var(--color-korper);
   }
-}
-
-@media (max-width: 600px) {
-  .about-hero .image-placeholder-frame,
-  .collab-hero .image-placeholder-frame {
-    height: 260px !important;
-  }
 
   .cards-grid {
     grid-template-columns: 1fr;
     padding: 0 24px;
   }
 
-  .team-member .image-placeholder-frame {
-    height: 400px;
+  .about-hero .image-placeholder-frame,
+  .collab-hero .image-placeholder-frame {
+    height: 260px !important;
   }
+}
 
-  .team-member .image-placeholder-frame img {
-    object-position: center 25%;
-  }
-
-  .team-member .image-placeholder-frame img[src*="Katzschmann"] {
-    object-position: center 45%;
-  }
-
-  .team-member .image-placeholder-frame img[src*="Michelis"] {
-    object-position: center 30%;
-  }
-
+@media (max-width: 600px) {
   .email-address-link {
     font-size: 0.8rem;
     word-break: normal;
@@ -734,3 +718,5 @@ footer {
     justify-content: center;
   }
 }
+
+
