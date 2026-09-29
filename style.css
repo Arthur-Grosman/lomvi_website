@@ -707,8 +707,16 @@ footer {
     height: 260px !important;
   }
 
+  .collab-hero .image-placeholder-frame {
+    aspect-ratio: unset;
+    height: auto;
+  }
+
   .collab-hero .image-placeholder-frame img {
-    object-fit: contain;
+    position: static;
+    width: 100%;
+    height: auto;
+    object-fit: unset;
   }
 }
 
