@@ -703,8 +703,7 @@ footer {
     padding: 0 24px;
   }
 
-  .about-hero .image-placeholder-frame,
-  .collab-hero .image-placeholder-frame {
+  .about-hero .image-placeholder-frame {
     height: 260px !important;
   }
 }
