@@ -370,13 +370,13 @@ header {
 .card-vision {
   background-image:
     linear-gradient(135deg, rgba(20, 94, 117, 0.85), rgba(18, 18, 18, 0.92)),
-    url('images/diving_guillemot.png');
+    url('images/diving_guillemot.jpg');
 }
 
 .card-tech {
   background-image:
     linear-gradient(135deg, rgba(20, 94, 117, 0.85), rgba(18, 18, 18, 0.92)),
-    url('images/sketch_render.png');
+    url('images/sketch_render.jpg');
 }
 
 /*
@@ -408,7 +408,7 @@ header {
   padding: 120px 0;
   background-image:
     linear-gradient(rgba(20, 94, 117, 0.90), rgba(18, 18, 18, 0.95)),
-    url('images/environments.png');
+    url('images/environments.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
