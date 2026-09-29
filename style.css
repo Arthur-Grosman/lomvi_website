@@ -379,11 +379,12 @@ header {
     url('images/sketch_render.png');
 }
 
+/*
 .card:hover {
   transform: translateY(-8px);
   border-color: var(--color-akzent-light);
   box-shadow: 0 16px 40px rgba(20, 94, 117, 0.25);
-}
+}*/
 
 .card-title {
   font-size: 1.4rem;
