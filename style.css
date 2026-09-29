@@ -718,6 +718,17 @@ footer {
     height: auto;
     object-fit: unset;
   }
+
+  .section-showcase .image-placeholder-frame {
+    height: auto;
+  }
+
+  .section-showcase .image-placeholder-frame img {
+    position: static;
+    width: 100%;
+    height: auto;
+    object-fit: unset;
+  }
 }
 
 @media (max-width: 600px) {
