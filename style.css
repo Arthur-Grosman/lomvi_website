@@ -706,6 +706,10 @@ footer {
   .about-hero .image-placeholder-frame {
     height: 260px !important;
   }
+
+  .collab-hero .image-placeholder-frame img {
+    object-fit: contain;
+  }
 }
 
 @media (max-width: 600px) {
