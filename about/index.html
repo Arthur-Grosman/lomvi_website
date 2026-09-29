@@ -56,12 +56,17 @@
     
     /* Adapted placeholders to Bauch (#CDEBF0) tinted fills */
     .team-member .image-placeholder-frame {
-      height: 300px;
+      aspect-ratio: 4 / 5;
+      height: auto;
       margin-bottom: 20px;
       border-radius: var(--border-radius);
       background-color: var(--color-bauch); /* Bauch: tinted fills */
       border: 2px solid var(--color-akzent); /* Akzent: shapes/labels */
       color: var(--color-akzent-deep);
+    }
+
+    .team-member .image-placeholder-frame img {
+      object-position: center top;
     }
     
     .team-member-name {
