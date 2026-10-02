@@ -1,25 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Console log to ensure the script file loaded successfully
-    console.log("Website successfully loaded.");
-
-    // You can add interactive elements here later, such as a mobile nav drawer
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('open');
-    });
-    }
-    
-    // Hide placeholder text/icons if the profile.jpg successfully loads
-    const profileImg = document.querySelector('.image-placeholder-frame img');
-    const placeholderIcon = document.getElementById('placeholder-icon');
-    const placeholderText = document.getElementById('placeholder-text');
-
-    if (profileImg) {
-        profileImg.onload = () => {
-            if (placeholderIcon) placeholderIcon.style.display = 'none';
-            if (placeholderText) placeholderText.style.display = 'none';
-        };
-    }
-});
+(function(){
+  var h=document.getElementById('site-header'),logo=document.getElementById('site-logo'),btn=document.getElementById('menu-btn'),menu=document.getElementById('mobile-menu');
+  var white=logo.getAttribute('src'),dark=white.replace('lomvi-logo-white.svg','lomvi-logo.svg');
+  function upd(){var s=window.scrollY>40||menu.classList.contains('open');h.classList.toggle('scrolled',s);logo.setAttribute('src',s?dark:white);}
+  window.addEventListener('scroll',upd,{passive:true});upd();
+  btn.addEventListener('click',function(){menu.classList.toggle('open');upd();});
+  document.querySelectorAll('video').forEach(function(v){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});});
+})();
