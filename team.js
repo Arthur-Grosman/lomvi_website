@@ -5,7 +5,7 @@ const BIOS = {
   "Nyah Thöny": { study: "Health Sciences and Technology, BSc", soft: "Sponsor organisation and social media.", tech: "Responsible for biomechanics research on the guillemot and for the mechanical design of the fins." },
   "Gabriel Stocker": { study: "Mechanical Engineering, BSc", soft: "Social media and 3D-printer maintenance.", tech: "Responsible for the wing actuation mechanism (gearbox) and the wing design." },
   "Caspar Freiherr v. Heyl zu Herrnsheim": { study: "Mechanical Engineering, BSc", soft: "Sponsoring and branding", tech: "Responsible for motion simulation and SLAM (simultaneous localisation and mapping)." },
-  "Rugilé Urnieziute": { study: "Health Science and Technology, BSc", soft: "Co-lead and infrastructure.", tech: "Responsible for the gearbox and the wing thrust analysis." },
+  "Rugilé Urnieziute": { study: "Mechanical Engineering, BSc", soft: "Co-lead and infrastructure.", tech: "Responsible for the gearbox and the wing thrust analysis." },
   "Arthur Grosman": { study: "Mechanical Engineering, BSc", soft: "Public relations and website.", tech: "Responsible for camera selection and computer vision." },
   "Niels Tapuy": { study: "Mechanical Engineering, BSc", soft: "Photography and branding.", tech: "Responsible for the control architecture." },
   "Taigo Sakai": { study: "Mechanical Engineering, BSc", soft: "Budget and purchasing.", tech: "Responsible for the power supply, motor selection and cable management." },

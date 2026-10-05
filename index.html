@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="intro" style="position:fixed;inset:0;z-index:1000;cursor:pointer;">
+  <div id="intro-water" style="position:absolute;inset:0;background:linear-gradient(180deg,#1B6A82 0%,#12495A 50%,#0A2A35 100%);"></div>
+  <div id="intro-ring" style="position:absolute;left:50%;top:50%;width:min(56vw,360px);aspect-ratio:1;border:1px solid rgba(205,235,240,.4);border-radius:50%;transform:translate(-50%,-50%) scale(.2);opacity:0;"></div>
+  <img id="intro-logo" src="images/lomvi-logo-white.svg" alt="Lomvi Robotics" style="position:absolute;left:50%;top:50%;width:min(64vw,440px);height:auto;transform:translate(-50%,-50%);transform-origin:0 0;clip-path:inset(0 100% 0 0);display:block;">
+  <button id="intro-skip" style="position:absolute;right:24px;bottom:24px;padding:10px 16px;border:1px solid rgba(244,250,251,.45);border-radius:999px;background:rgba(18,18,18,.25);color:#F4FAFB;font:500 12px/1 'Helvetica Neue',Helvetica,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;">Skip</button>
+</div>
 <div style="position:relative;background:var(--lomvi-ice);min-height:100vh;display:flex;flex-direction:column;">
 
   <header style="position:fixed;top:0;left:0;right:0;z-index:30;background:transparent;border-bottom:1px solid transparent;backdrop-filter:none;-webkit-backdrop-filter:none;transition:background var(--dur-slow) var(--ease-glide);" id="site-header">
@@ -41,7 +47,7 @@
     
     
     <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,34,43,.9) 0%,rgba(8,34,43,.55) 50%,rgba(8,34,43,.15) 100%);"></div>
-    <div style="position:relative;width:100%;max-width:1440px;margin:0 auto;padding:160px clamp(24px,4vw,64px) 72px;box-sizing:border-box;display:flex;flex-direction:column;gap:28px;">
+    <div id="hero-content" style="position:relative;width:100%;max-width:1440px;margin:0 auto;padding:160px clamp(24px,4vw,64px) 72px;box-sizing:border-box;display:flex;flex-direction:column;gap:28px;">
       <h1 style="margin:0;max-width:820px;font:700 clamp(52px,8vw,104px)/1 var(--font-display);letter-spacing:-0.03em;color:var(--lomvi-ice);text-wrap:balance;">Document the waters without leaving a mark.</h1>
       <p style="margin:0;max-width:560px;font:300 clamp(18px,2vw,22px)/1.45 var(--font-body);color:var(--lomvi-bauch);text-wrap:pretty;">We're building an autonomous, non-invasive soft robot that swims like a guillemot.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
@@ -181,5 +187,27 @@
   </footer>
 </div>
 <script src="script.js"></script>
+<script>
+(function(){
+  var o=document.getElementById('intro');if(!o)return;
+  var seen=false;try{seen=sessionStorage.getItem('lomviIntroSeen');}catch(e){}
+  if(seen||!o.animate||matchMedia('(prefers-reduced-motion: reduce)').matches){o.remove();return;}
+  var $=function(id){return document.getElementById(id);},fly=$('intro-logo'),hdr=$('site-logo'),glide='cubic-bezier(.22,.8,.24,1)',A=[],T=[],done=false;
+  function an(el,kf,opt){if(!el)return;var d={fill:'both',easing:glide};for(var k in opt)d[k]=opt[k];A.push(el.animate(kf,d));}
+  document.documentElement.style.overflow='hidden';
+  an($('intro-ring'),[{opacity:0,transform:'translate(-50%,-50%) scale(.2)'},{opacity:.7,offset:.25},{opacity:0,transform:'translate(-50%,-50%) scale(1.5)'}],{duration:1800,delay:150,easing:'ease-out'});
+  an(fly,[{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)'}],{duration:1100,delay:600});
+  an(hdr,[{opacity:0},{opacity:0}],{duration:3150,fill:'backwards'});
+  [document.querySelector('.nav-desktop'),$('menu-btn')].forEach(function(el){an(el,[{opacity:0,transform:'translateY(-4px)'},{opacity:1,transform:'none'}],{duration:600,delay:2900});});
+  Array.prototype.forEach.call($('hero-content').children,function(el,i){an(el,[{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'none'}],{duration:800,delay:2650+i*130});});
+  an($('intro-water'),[{opacity:1},{opacity:0}],{duration:1000,delay:2300,easing:'ease-in-out'});
+  an($('intro-skip'),[{opacity:1},{opacity:0}],{duration:300,delay:2300});
+  T.push(setTimeout(function(){var f=fly.getBoundingClientRect(),t=hdr.getBoundingClientRect();
+    an(fly,[{transform:'translate(-50%,-50%)'},{transform:'translate(-50%,-50%) translate('+(t.left-f.left)+'px,'+(t.top-f.top)+'px) scale('+(t.width/f.width)+')'}],{duration:900});},2250));
+  function end(){if(done)return;done=true;T.forEach(clearTimeout);A.forEach(function(a){try{a.cancel();}catch(e){}});
+    document.documentElement.style.overflow='';try{sessionStorage.setItem('lomviIntroSeen','1');}catch(e){}o.remove();}
+  o.addEventListener('click',end);T.push(setTimeout(end,4000));
+})();
+</script>
 </body>
 </html>
